@@ -1,0 +1,201 @@
+.teacher-room {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 40px 80px;
+  font-family: "Inter", sans-serif;
+  color: #1e293b;
+}
+
+/* Header & Delete Button */
+.teacher-room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap; /* Allows button to wrap on small screens */
+  gap: 16px; /* Adds space if it wraps */
+}
+
+.delete-room-btn {
+  background-color: #fee2e2; /* Light red background */
+  color: #b91c1c; /* Dark red text */
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.delete-room-btn:hover {
+  background-color: #fecaca; /* Lighter red on hover */
+}
+
+.delete-room-btn:disabled {
+  background-color: #f3f4f6; /* Gray when disabled */
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Page Titles */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* Utility class from original code */
+.r {
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-direction: row !important;
+}
+
+/* Card Styles */
+.chart-card,
+.table-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+  width: 100%;
+  /* Height is controlled by 'aspect' in the React component */
+}
+
+/* Empty Chart Message */
+.empty-chart-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+/* Table Section */
+.table-card {
+  overflow-x: auto; /* Enables horizontal scroll for small screens */
+}
+
+.topics-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Ensures columns don’t squeeze too much */
+}
+
+.topics-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #6b7280;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topics-table td {
+  padding: 14px 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.topics-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ----------------------------------- */
+/* 📱 RESPONSIVE DESIGN BREAKPOINTS */
+/* ----------------------------------- */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .teacher-room {
+    padding: 30px 40px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .teacher-room-header {
+    flex-direction: column;
+    align-items: stretch; /* Make items full-width */
+  }
+
+  .delete-room-btn {
+    text-align: center;
+  }
+
+  .teacher-room {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 24px; /* Adjusted margin for mobile */
+  }
+
+  .chart-card,
+  .table-card {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .topics-table th,
+  .topics-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .empty-chart-message {
+    height: 150px;
+    font-size: 14px;
+  }
+}

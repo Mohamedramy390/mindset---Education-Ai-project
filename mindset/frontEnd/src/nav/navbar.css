@@ -1,0 +1,40 @@
+.room-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 48px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.room-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.room-menu a {
+  margin: 0 16px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.room-menu a:hover {
+  color: #2563eb;
+}
+
+.room-menu a.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 3px;
+}
+
+.room-avatar {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+}

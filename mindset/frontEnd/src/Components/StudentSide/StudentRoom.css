@@ -1,0 +1,132 @@
+/* === Page Base === */
+.room-page {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  /* Make the page take the full viewport height */
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Navbar, Main, Resources (Removed) === */
+/* All styles for .room-navbar, .room-main, .room-resources, 
+   .room-resource-grid, and .resource-card are removed 
+   as the elements are no longer in the JSX. */
+
+/* === Chatbot Section (Modified for Full Page) === */
+.room-chatbot {
+  background: white;
+  /* Removed border-radius and shadow for a cleaner full-page look */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  /* This makes the chatbot container fill the entire .room-page */
+  flex: 1; 
+  /* Ensure padding doesn't cause overflow */
+  box-sizing: border-box; 
+  /* Set a max-width and center it for better readability on wide screens */
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; /* Centers the container */
+  /* We can add back some subtle styling if desired */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Give it some vertical margin if the page is taller than the vh */
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  height: 96vh; /* Adjust height to account for margins */
+}
+
+.room-chatbot h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+  text-align: center; /* Center the title */
+}
+
+/* Chat Window */
+.room-chat-window {
+  /* This is the key change:
+     flex: 1 makes the window expand to fill the available space 
+     in the .room-chatbot container. */
+  flex: 1;
+  overflow-y: auto;
+  background: #f5f6fa;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #eee;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* This max-height is REMOVED to allow the window to fill the page */
+  /* max-height: 400px; */ 
+}
+
+.chat-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chat-message.bot {
+  background: #e0ecff;
+  color: #1e3a8a;
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  background: #dcfce7;
+  color: #065f46;
+  align-self: flex-end;
+}
+
+
+/* Input Area */
+.room-chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.room-chat-input input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.room-chat-input input:focus {
+  border-color: #2563eb;
+}
+
+.room-chat-input input:disabled {
+  background-color: #f3f4f6;
+}
+
+.room-chat-input button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.room-chat-input button:hover {
+  background: #1e40af;
+}
+
+.room-chat-input button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
